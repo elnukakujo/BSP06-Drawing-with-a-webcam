@@ -16,6 +16,8 @@ As more lines are draw, previous lines slowly disappears. When 40 lines have bee
 
 To avoid unexpected program closures, I implemented a system of finger state (open/close) remembrance for the last 20 iterations, so that if, by mistake, the program detects that the hand is closed for less than half their remembrance, it won't apply this command. This allows the program to not close at each landmarks error.
 
+With the base of this program, lots of new features can be implemented. Every finger is detected, and combinations between fingers are possible giving 5! possiblities.
+
 References:
 
 Python documentation: https://docs.python.org/3/
