@@ -50,6 +50,7 @@ class handDetector():
         return False
 
 def getHandPos(lmList, key):
+    #Define the finger states
     new_hand = list()
     if lmList[key][5][2]>lmList[key][8][2]:
         new_hand.append(1)
@@ -82,6 +83,7 @@ def updateHands(hands, lmList, key, handsmemory):
     return hands
 
 def checkConds(hands, key):
+    #Uses fingers states (0=clos, 1=open) to see which condition is met
     d_cond = list()
     c_cond = list()
     s_cond = list()
@@ -101,6 +103,7 @@ def checkConds(hands, key):
     return d_cond, c_cond, s_cond
 
 def newDraw(d_cond):
+    #Check if the condition is also met by more than half the remembrance
     if 1 in d_cond:
         d_cond_neg = copy.copy(d_cond)
         try:
@@ -119,6 +122,7 @@ def newDraw(d_cond):
     
 
 def newColor(c_cond, lmList, key, img, color):
+    #Check if the condition is also met by more than half the remembrance
     if 1 in c_cond:
         c_cond_neg = copy.copy(c_cond)
         try:
@@ -131,6 +135,7 @@ def newColor(c_cond, lmList, key, img, color):
     return color
 
 def stop(s_cond):
+    #Check if the condition is also met by more than half the remembrance
     if 1 in s_cond:
         s_cond_neg = copy.copy(s_cond)
         try:
