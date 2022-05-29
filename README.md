@@ -14,4 +14,4 @@ To detects if a finger is raised or not, it uses the Mediapipe hand landmarks of
 
 As more lines are draw, previous lines slowly disappears. When 40 lines have been draw, it removes the oldest one.
 
-To avoid unexpected program closures, I implemented a system of finger state (open/close) remembrance, so that if, by mistake, the program detects that the hand is closed for less than half their remembrance, it won't apply this command. This allows the program to not close at each landmarks error.
+To avoid unexpected program closures, I implemented a system of finger state (open/close) remembrance for the last 20 iterations, so that if, by mistake, the program detects that the hand is closed for less than half their remembrance, it won't apply this command. This allows the program to not close at each landmarks error.
