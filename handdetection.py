@@ -1,9 +1,6 @@
-from ast import Dict
-from this import d
 import cv2
 import mediapipe as mp
 import time
-import os
 import copy
 
 class handDetector():
